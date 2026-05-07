@@ -21,36 +21,45 @@ Mở file `appsettings.json` và thay `YOUR_OPENAI_API_KEY_HERE` bằng API key 
 
 ### Bước 2: Build và chạy
 ```bash
-cd TranslatorApp
-dotnet build
-dotnet run
+# chạy trực tiếp từ source
+ dotnet build
+ dotnet run
 ```
 
 Hoặc publish ra file .exe:
 ```bash
-dotnet publish -c Release -r win-x64 --self-contained true
+ dotnet publish -c Release -r win-x64 --self-contained true
 ```
 
 ## Sử dụng
 
 1. Chạy app → icon xuất hiện ở System Tray (góc phải taskbar)
 2. Bôi đen văn bản nhấn Alt + T để dịch hoặc Alt + S để chụp màn hình
-4. Popup xuất hiện gần con trỏ chuột với bản dịch tiếng Việt
-
+3. Popup xuất hiện gần con trỏ chuột với bản dịch tiếng Việt
 
 ## Cấu trúc project
 
+> Cây thư mục dưới đây được cập nhật để khớp với cấu trúc thực tế của repository.
+
 ```
-TranslatorApp/
-├── App.xaml                    # Entry point, system tray
-├── App.xaml.cs                 # Logic chính: hotkey → clipboard → dịch → popup
-├── appsettings.json            # Cấu hình API key, model, hotkey
+.
+├── .gitignore
+├── App.xaml
+├── App.xaml.cs
+├── CLAUDE.md
+├── README.md
+├── TranslatorApp.csproj
+├── idea.md
 ├── Services/
-│   ├── HotkeyService.cs        # Đăng ký Ctrl+Shift+T toàn cục
-│   ├── ClipboardService.cs     # Lấy text + cache
-│   └── GptService.cs           # Gọi OpenAI API, retry, cache
+│   ├── ClipboardService.cs
+│   ├── GptService.cs
+│   ├── HotkeyService.cs
+│   ├── LogService.cs
+│   └── OcrService.cs
 └── Windows/
-    ├── TranslationPopup.xaml   # UI popup
+    ├── ScreenOverlay.xaml
+    ├── ScreenOverlay.xaml.cs
+    ├── TranslationPopup.xaml
     └── TranslationPopup.xaml.cs
 ```
 
