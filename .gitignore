@@ -1,0 +1,68 @@
+# Visual Studio / .NET
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+**/bin/
+**/obj/
+
+# Publish
+publish/
+**/publish/
+*.pubxml
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# NuGet
+*.nupkg
+packages/
+
+# Rider caches
+.idea/
+
+# OS files
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Logs, databases, tooling
+*.log
+*.sql
+*.sqlite
+*.dbmdl
+
+# Runtime
+*.exe
+*.dll
+*.pdb
+*.runtimeconfig.json
+*.deps.json
+
+# User-specific files
+*.user
+*.userprefs
+*.vsix
+
+# Ignore appsettings with secrets (do NOT commit API keys)
+appsettings.json
+
+# Ignore publish output and single-file bundles
+*.zip
+publish/**
+
+# Temporary files
+*.tmp
+*.temp
+
+# Ignore JetBrains Rider caches
+.idea/
+
+# End of file
